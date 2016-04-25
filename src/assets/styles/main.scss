@@ -1,0 +1,134 @@
+@import 'normalize';
+@import 'skeleton';
+
+// The style is borrowed from https://dribbble.com/shots/2403683-Movie-Streaming
+
+body {
+	background: rgba(0, 0, 0, 0) linear-gradient(45deg, #1d262e, #344652);
+	color: #e6e6e6;
+}
+
+.search-bar {
+	height: 7rem;
+	text-align: center;
+
+	input {
+		width: 68%;
+		color: #333;
+	}
+}
+
+.tabs {
+	display: flex;
+	justify-content: center;
+	border-bottom: 1px solid rgba(230, 230, 230, 0.1);
+	margin: 2rem auto;
+
+	a {
+		width: 20rem;
+		height: 5rem;
+		line-height: 5rem;
+
+		text-align: center;
+		text-decoration: none;
+		color: rgba(230, 230, 230, 0.5);
+
+		&.active {
+			background-color: rgba(255, 255, 255, 0.1);
+			border-bottom: 4px solid #43b094;
+			color: #e6e6e6;
+			cursor: normal;
+		}
+	}
+}
+
+.movie-list {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+
+	.movie {
+		$width: 20rem;
+		$height: $width * 1.68;
+
+		width: $width;
+		margin: 1rem;
+
+		.poster-movie-image {
+			width: $width;
+			height: $height - 3rem;
+			background-size: cover;
+			background-position: center center;
+			box-shadow: 0 5px 40px 0 rgba(0, 0, 0, 0.5);
+		}
+
+		.poster-movie-content {
+			height: 2rem;
+			padding: 1rem 0;
+			position: relative;
+
+			.movie-title {
+				line-height: 2rem;
+				white-space: nowrap;
+				overflow: hidden;
+			}
+
+			$width: 4rem;
+			$margin-circle: 1rem;
+			.action-button {
+				position: absolute;
+				width: $width;
+				height: $width;
+				line-height: $width;
+				border-radius: $width/2;
+				text-align: center;
+				font-size: 3rem;
+				color: white;
+				top: -$width - $margin-circle;
+				cursor: pointer;
+
+				background: #FF9F1C linear-gradient(#FF9F1C, rgba(0, 0, 0, 0.3));
+				transition-duration: 0.1s;
+				transition-property: transform;
+
+				&:hover {
+					transform: scale(1.1);
+
+				}
+
+				&.hide {
+					display: none;
+				}
+
+				.revert {
+					transform: scaleX(-1);
+				}
+			}
+
+			.add-to-list {
+				right: $margin-circle;
+
+				&.active {
+					color: #E71D36;
+					text-shadow: 1px 2px 2px rgba(0,0,0,0.3);
+				}
+			}
+			.move-left {
+				left: $margin-circle;
+			}
+			.move-right {
+				left: $margin-circle*2 + $width;
+			}
+
+
+		}
+	}
+}
+
+.footer {
+	border-top: 1px solid rgba(230, 230, 230, 0.1);
+	margin: 1rem 0;
+	text-align: right;
+	padding: 1rem 0;
+	color: rgba(230, 230, 230, 0.5);
+}
