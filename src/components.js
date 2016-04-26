@@ -38,7 +38,7 @@ let MovieList = React.createClass({
 				<Movie
 					key={k}
 					movieId={k}
-					path={"src/assets/images/"+movie.fileName}
+					path={"http://lab.arpuli.com/posters/"+movie.fileName}
 					name={movie.name}
 					isFavorite={this.props.myFavoriteMovieIds.indexOf(k)>-1}
 					showMoveLeftRight={this.props.showMoveLeftRight}
