@@ -9,12 +9,13 @@ body {
 }
 
 .search-bar {
-	height: 7rem;
 	text-align: center;
+	margin: 1rem auto;
 
 	input {
 		width: 68%;
 		color: #333;
+		margin: 0;
 	}
 }
 
